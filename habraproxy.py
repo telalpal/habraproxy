@@ -46,7 +46,7 @@ def process_proxy(request: Request) -> Response:
 
 
 def _modify_habra_content(content: str, host_url: str) -> str:
-    soup = BeautifulSoup(content, 'html.parser')
+    soup = BeautifulSoup(content, 'html5lib')
     _process_words(soup)
     _process_links(soup, host_url)
     return str(soup)
